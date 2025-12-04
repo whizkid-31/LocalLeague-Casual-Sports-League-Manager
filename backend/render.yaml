@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: localleague-backend
+    env: node
+    buildCommand: npm install && npm run prisma:generate
+    startCommand: npm run start
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_TTL
+        value: 1h
+      - key: PORT
+        value: 10000
+    healthCheckPath: /health
+
