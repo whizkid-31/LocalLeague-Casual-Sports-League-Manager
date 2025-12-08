@@ -1,0 +1,395 @@
+.nav {
+  background: #222;
+  padding: 1.25rem 2.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav a {
+  color: #FAF7F2;
+  text-decoration: none;
+  margin-right: 2rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: #E53935;
+}
+
+.nav button {
+  background: #E53935;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition: background 0.2s;
+}
+
+.nav button:hover {
+  background: #C62828;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid #E0E0E0;
+}
+
+.form-container {
+  max-width: 450px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid #E0E0E0;
+}
+
+.form-container h2 {
+  color: #222;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #E0E0E0;
+  border-radius: 0;
+  font-size: 1.1rem;
+  transition: border-color 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #E53935;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 1rem;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+  background: #E53935;
+}
+
+.error {
+  color: #fa5252;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.05rem;
+}
+
+.card {
+  background: #FAF7F2;
+  padding: 1.8rem;
+  border-radius: 0;
+  margin-bottom: 1.2rem;
+  border-left: 3px solid #E53935;
+}
+
+.card h3 {
+  color: #222;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th {
+  background: #222;
+  color: white;
+  padding: 1.2rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+td {
+  padding: 1.2rem;
+  border-bottom: 1px solid #E0E0E0;
+  font-size: 1.05rem;
+}
+
+tr:hover {
+  background: #FAF7F2;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pagination button {
+  padding: 0.7rem 1.3rem;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 1.05rem;
+  transition: background 0.2s;
+}
+
+.pagination button:disabled {
+  background: #BDBDBD;
+  cursor: not-allowed;
+}
+
+.pagination button:not(:disabled):hover {
+  background: #E53935;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 1rem;
+  margin-bottom: 0.7rem;
+  background: #FAF7F2;
+  border-radius: 0;
+  border-left: 3px solid #E53935;
+  font-size: 1.1rem;
+}
+
+h2 {
+  color: #222;
+  margin-bottom: 1.8rem;
+  font-size: 2.2rem;
+}
+
+h3 {
+  color: #222;
+  margin-top: 1.8rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.6rem;
+}
+
+.league-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  min-height: 70vh;
+}
+
+.league-card {
+  background: white;
+  padding: 4rem;
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid #E0E0E0;
+  border-left: 5px solid #E53935;
+  transition: transform 0.2s, border-color 0.2s;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.league-card:hover {
+  transform: translateY(-2px);
+  border-left-color: #C62828;
+}
+
+.league-card h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #222;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.league-card p {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+.league-actions {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.btn-primary, .btn-secondary {
+  flex: 1;
+  padding: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0;
+  font-weight: 600;
+  font-size: 1.3rem;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: #222;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #E53935;
+}
+
+.btn-secondary {
+  background: white;
+  color: #222;
+  border: 1px solid #222;
+}
+
+.btn-secondary:hover {
+  background: #222;
+  color: white;
+}
+
+.match-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.match-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid #E0E0E0;
+  border-left: 3px solid #E53935;
+}
+
+.match-number {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #E53935;
+  margin-bottom: 1.5rem;
+}
+
+.match-teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.team-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.team-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #222;
+  text-align: center;
+}
+
+.vs {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #E53935;
+  padding: 0 2rem;
+}
+
+.match-details {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  text-align: center;
+}
+
+.detail .label {
+  font-size: 1rem;
+  color: #868e96;
+  font-weight: 500;
+}
+
+.detail span:last-child {
+  font-size: 1.15rem;
+  color: #222;
+  font-weight: 600;
+}
+
+.btn-delete {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1.2rem;
+  background: #E53935;
+  color: white;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-delete:hover {
+  background: #C62828;
+}
+
+.btn-adjust {
+  background: #222;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-adjust:hover {
+  background: #E53935;
+}

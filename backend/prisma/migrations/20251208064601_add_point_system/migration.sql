@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE `League` ADD COLUMN `pointsForDraw` INTEGER NOT NULL DEFAULT 1,
+    ADD COLUMN `pointsForWin` INTEGER NOT NULL DEFAULT 3;

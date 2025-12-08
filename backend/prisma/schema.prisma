@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  role      String   @default("PLAYER")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model League {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?  @db.Text
+  teams       Team[]
+  games       Game[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Team {
+  id           Int      @id @default(autoincrement())
+  name         String
+  logo         String?  @db.LongText
+  leagueId     Int
+  manualPlayed Int      @default(0)
+  manualWins   Int      @default(0)
+  manualDraws  Int      @default(0)
+  manualLosses Int      @default(0)
+  manualPoints Int      @default(0)
+  league       League   @relation(fields: [leagueId], references: [id], onDelete: Cascade)
+  players      Player[]
+  homeGames    Game[]   @relation("HomeTeam")
+  awayGames    Game[]   @relation("AwayTeam")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Player {
+  id        Int      @id @default(autoincrement())
+  name      String
+  position  String?
+  teamId    Int
+  team      Team     @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Game {
+  id            Int       @id @default(autoincrement())
+  matchNumber   Int       @default(1)
+  leagueId      Int
+  homeTeamId    Int
+  awayTeamId    Int
+  venue         String?
+  status        String    @default("upcoming")
+  scheduledDate DateTime
+  homeScore     Int?
+  awayScore     Int?
+  league        League    @relation(fields: [leagueId], references: [id], onDelete: Cascade)
+  homeTeam      Team      @relation("HomeTeam", fields: [homeTeamId], references: [id])
+  awayTeam      Team      @relation("AwayTeam", fields: [awayTeamId], references: [id])
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}

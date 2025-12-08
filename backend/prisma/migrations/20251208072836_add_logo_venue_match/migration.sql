@@ -1,0 +1,6 @@
+-- AlterTable
+ALTER TABLE `Game` ADD COLUMN `matchNumber` INTEGER NOT NULL DEFAULT 1,
+    ADD COLUMN `venue` VARCHAR(191) NULL;
+
+-- AlterTable
+ALTER TABLE `Team` ADD COLUMN `logo` VARCHAR(191) NULL;
